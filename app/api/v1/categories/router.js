@@ -3,10 +3,12 @@ const router = express();
 
 const { create, index, find, update, destroy } = require('./controller');
 
-router.get('/', index);
-router.get('/:id', find);
-router.put('/:id', update);
-router.post('/', create);
-router.delete('/:id', destroy);
+const { authenticateUser } = require('../../../middlewares/auth');
+
+router.get('/', authenticateUser, index);
+router.get('/:id', authenticateUser, find);
+router.put('/:id', authenticateUser, update);
+router.post('/', authenticateUser, create);
+router.delete('/:id', authenticateUser, destroy);
 
 module.exports = router;
