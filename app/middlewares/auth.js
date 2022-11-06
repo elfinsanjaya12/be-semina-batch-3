@@ -11,6 +11,9 @@ const authenticateUser = async (req, res, next) => {
       token = authHeader.split(' ')[1];
     }
 
+    console.log('token');
+    console.log(token);
+
     if (!token) {
       throw new UnauthenticatedError('Authentication invalid');
     }
