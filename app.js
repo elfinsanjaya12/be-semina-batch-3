@@ -11,6 +11,7 @@ const eventsRouter = require('./app/api/v1/events/router');
 const organizersRouter = require('./app/api/v1/organizers/router');
 const userRefreshTokenRouter = require('./app/api/v1/userRefreshToken/router');
 const paymentsRouter = require('./app/api/v1/payments/router');
+const ordersRouter = require('./app/api/v1/orders/router');
 const urlV1 = '/api/v1/cms';
 
 const notFoundMiddleware = require('./app/middlewares/not-found');
@@ -32,6 +33,7 @@ app.use(`${urlV1}/organizers`, organizersRouter);
 app.use(`${urlV1}/auth`, authCMSRouter);
 app.use(`${urlV1}/refresh-token`, userRefreshTokenRouter);
 app.use(`${urlV1}/payments`, paymentsRouter);
+app.use(`${urlV1}/orders`, ordersRouter);
 
 app.use(notFoundMiddleware);
 app.use(handleErrorMiddleware);
