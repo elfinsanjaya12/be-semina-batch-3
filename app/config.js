@@ -5,6 +5,6 @@ module.exports = {
   urlDb: process.env.URL_MONGODB_DEV,
   jwtSecret: process.env.JWT_SECRET,
   jwtRefreshTokenSecret: process.env.JWT_SECRET_REFRESH_TOKEN,
-  jwtExpiration: '1m',
-  jwtRefreshTokenExpiration: '2m',
+  jwtExpiration: '2h',
+  jwtRefreshTokenExpiration: '24h',
 };
